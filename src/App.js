@@ -1,6 +1,6 @@
 import {NavBar} from "./components/NavgationBar"
+import "./App.css"
 function App() {
-   // let Navbar = NavBar
     return (
         <NavBar/>
     );
