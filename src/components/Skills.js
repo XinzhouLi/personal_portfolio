@@ -39,7 +39,7 @@ export const Skills = () =>{
                             <p>
                                 description of skills
                             </p>
-                            <Carousel responsive={responsive} infinite={true} className="skill-silder" draggable={true} swipeable={true}>
+                            <Carousel responsive={responsive} infinite={true} className="skill-slider" draggable={true} swipeable={true}>
                                 <div className="item">
                                     <img src={skills_logo}   alt="Python"/>
                                     <h5>
