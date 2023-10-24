@@ -61,7 +61,7 @@ export const Projects = ()=>{
                                 </Nav.Item>
                                 <Nav.Item>
                                     <Nav.Link eventKey="second">
-                                        Deep Learning projects<
+                                        DeepLearning projects<
                                         /Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
@@ -101,7 +101,7 @@ export const Projects = ()=>{
                     </Col>
                 </Row>
             </Container>
-            <img src={colorSharp} alt="background color sharp"/>
+            <img src={colorSharp} alt="background color sharp" className="background-image-right"/>
         </section>
     )
 
