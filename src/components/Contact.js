@@ -1,5 +1,5 @@
 import {useState} from "react"
-import {Col, Row, Container, Form} from "react-bootstrap";
+import {Col, Row, Container} from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg"
 
 export const Contact = ()=>{
@@ -55,7 +55,7 @@ export const Contact = ()=>{
 
                     <Col md={6}>
                         <h2>Get in Touch!</h2>
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <Row>
                                 <Col sm={6} className="px-1">
                                     <input type="text" value={formDetails.firstName} placeholder="First Name"
@@ -81,16 +81,18 @@ export const Contact = ()=>{
                                                formUpdate('phone', e.target.value)
                                            }/>
                                 </Col>
-                                <Col>
+                                <Col sm={12} className="px-1">
                                     <textarea rows={12} value={formDetails.message} placeholder="Messages"
                                               onChange={(e)=>
                                                   formUpdate('message', e.target.value)
                                               }/>
-                                    <button type={"submit"}> <span>Submit!</span></button>
+                                    <button type={"submit"}> <span>{btnText}</span></button>
                                 </Col>
                                 <Col>
-                                    status.message &&
-                                    <p className={status.sussess === false ? "danger":"success"}>{status.message}</p>
+                                    {
+                                        status.message &&
+                                        <p className={status.sussess === false ? "danger" : "success"}>{status.message}</p>
+                                    }
                                 </Col>
                             </Row>
                         </form>

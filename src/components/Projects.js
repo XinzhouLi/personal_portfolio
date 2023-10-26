@@ -7,10 +7,11 @@ import Container from "react-bootstrap/Container";
 import {Col, Row} from "react-bootstrap";
 import Tab from 'react-bootstrap/Tab';
 import Nav from "react-bootstrap/Nav";
+import TrackVisibility from "react-on-screen";
+import 'animate.css'
 
 
-
-export const Projects = ()=>{
+export const Projects = () => {
     const projects = [
         {
             title: "Business Startup",
@@ -44,16 +45,28 @@ export const Projects = ()=>{
         },
     ];
 
-    return(
+    return (
         <section className="project" id="projects">
+
             <Container>
                 <Row>
                     <Col>
-                        <h2>Projects</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad at culpa error facere facilis fugiat minima officiis repellendus vero. Accusamus aperiam architecto beatae dicta distinctio eius magni repudiandae ullam voluptatibus.</p>
-                        <Tab.Container id="projects-tabs"  defaultActiveKey="first">
+                        <TrackVisibility>
+                            {({isVisible}) =>
+                                <div className={isVisible ? "animate__animated animate__slideInUp" : ""}>
+                                    <h2>Projects</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad at culpa error
+                                        facere facilis
+                                        fugiat minima officiis repellendus vero. Accusamus aperiam architecto beatae
+                                        dicta
+                                        distinctio eius magni repudiandae ullam voluptatibus.</p>
+                                </div>
+                            }
+                        </TrackVisibility>
+                        <Tab.Container id="projects-tabs" defaultActiveKey="first">
                             {/*tab header*/}
-                            <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center">
+                            <Nav variant="pills"
+                                 className="nav-pills mb-5 justify-content-center align-items-center">
                                 <Nav.Item>
                                     <Nav.Link eventKey="first">
                                         Web Applications
@@ -65,42 +78,65 @@ export const Projects = ()=>{
                                         /Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                    <Nav.Link eventKey="third" >
+                                    <Nav.Link eventKey="third">
                                         Mobile Applications
                                     </Nav.Link>
                                 </Nav.Item>
                             </Nav>
-                        <Tab.Content>
-                            <Tab.Pane eventKey="first">
-                                <Row>
+                            <Tab.Content>
+                                <Tab.Pane eventKey="first">
+                                    <Row>
 
-                                    {
-                                        projects.map((project, index)=>{
-                                            return(
-                                               <ProjectCards
-                                               key={index}
-                                               {...project}/>
+                                        {
+                                            projects.map((project, index) => {
+                                                    return (
+                                                        <ProjectCards
+                                                            key={index}
+                                                            {...project}/>
+                                                    )
+                                                }
                                             )
-                                            }
-                                        )
-                                    }
-                                </Row>
-                            </Tab.Pane>
-                            <Tab.Pane eventKey="second">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus cum dolorem doloribus eveniet ex, labore magnam nostrum, omnis possimus quis tempore temporibus tenetur veniam vero voluptatum? Adipisci, amet at aut ex incidunt iste nesciunt possimus quaerat totam unde! Aperiam, eum?
-                            </Tab.Pane>
-                            <Tab.Pane eventKey="third">
-                                <Row>
-                                    <p>   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consequatur cum debitis eligendi eum fuga illum incidunt iste laboriosam molestiae neque nesciunt nihil odio placeat porro quam qui quidem quisquam saepe, similique soluta, velit voluptas? Autem culpa, ducimus esse hic impedit, inventore nisi nulla numquam perferendis quae quas reprehenderit sunt suscipit tempora vero? Aliquam asperiores assumenda dicta dignissimos dolore dolorum eius excepturi facere facilis id laudantium minus mollitia praesentium provident sit totam ullam vitae, voluptates. Enim eveniet iusto quam similique?
-                                    </p>
-                                 </Row>
-                            </Tab.Pane>
-                        </Tab.Content>
+                                        }
+                                    </Row>
+                                </Tab.Pane>
+                                <Tab.Pane eventKey="second">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus cum
+                                    dolorem
+                                    doloribus eveniet ex, labore magnam nostrum, omnis possimus quis tempore
+                                    temporibus
+                                    tenetur veniam vero voluptatum? Adipisci, amet at aut ex incidunt iste
+                                    nesciunt
+                                    possimus quaerat totam unde! Aperiam, eum?
+                                </Tab.Pane>
+                                <Tab.Pane eventKey="third">
+                                    <Row>
+                                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                            Assumenda
+                                            consequatur cum debitis eligendi eum fuga illum incidunt iste
+                                            laboriosam
+                                            molestiae neque nesciunt nihil odio placeat porro quam qui
+                                            quidem quisquam
+                                            saepe, similique soluta, velit voluptas? Autem culpa, ducimus
+                                            esse hic
+                                            impedit, inventore nisi nulla numquam perferendis quae quas
+                                            reprehenderit
+                                            sunt suscipit tempora vero? Aliquam asperiores assumenda dicta
+                                            dignissimos
+                                            dolore dolorum eius excepturi facere facilis id laudantium minus
+                                            mollitia
+                                            praesentium provident sit totam ullam vitae, voluptates. Enim
+                                            eveniet iusto
+                                            quam similique?
+                                        </p>
+                                    </Row>
+                                </Tab.Pane>
+                            </Tab.Content>
                         </Tab.Container>
 
                     </Col>
                 </Row>
             </Container>
+
             <img src={colorSharp} alt="background color sharp" className="background-image-right"/>
         </section>
     )

@@ -4,9 +4,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import {useEffect, useState} from "react";
 
 import logo from '../assets/img/logo.svg'
-import navIcon1 from '../assets/img/nav-icon1.svg'
-import navIcon2 from '../assets/img/nav-icon2.svg'
-import navIcon3 from '../assets/img/nav-icon3.svg'
+import linkedin_logo from '../assets/img/linkedin_logo.svg'
+import githubLogo from '../assets/img/github_logo.svg'
+
 
 
 
@@ -52,13 +52,13 @@ export const NavBar =  () =>{
                             Home
                         </Nav.Link>
 
-                        <Nav.Link href="#skill"
+                        <Nav.Link href="#skills"
                                   className={activeLink === 'skill' ? 'active navbar-link':'navbar-link'}
                                   onClick={()=> onUpdateActiveLink('skill')}>
                             Skills
                         </Nav.Link>
 
-                        <Nav.Link href="#project"
+                        <Nav.Link href="#projects"
                                   className={activeLink === 'project' ? 'active navbar-link':'navbar-link'}
                                   onClick={()=> onUpdateActiveLink('project')}>
                             Projects
@@ -67,21 +67,16 @@ export const NavBar =  () =>{
 
                     <span className="navbar-text">
                         <div className="social-icon">
-                            <a href="/#">
-                               <img src={navIcon1} alt="gitlogo"/>
+                            <a href="https://www.linkedin.com/in/xinzhou-li-34040522b/" target="_blank">
+                               <img src={linkedin_logo} alt="linkedinlogo"/>
                             </a>
-                            <a href="/#">
-                               <img src={navIcon2} alt="gitlogo"/>
+                            <a href="https://github.com/XinzhouLi" target="_blank">
+                               <img src={githubLogo} alt="githublogo"/>
                             </a>
-                            <a href="/#">
-                               <img src={navIcon3} alt="gitlogo"/>
-                            </a>
-                            <button className="connect" onClick={()=>{
-                                console.log('go to connect')
-                            }}>
-                            <span>
-                                Let's connect!
-                            </span>
+                            <button className="connect" onClick={()=>{window.location.href='#connect'}}>
+                                <span>
+                                    Let's connect!
+                                </span>
                             </button>
 
                         </div>
