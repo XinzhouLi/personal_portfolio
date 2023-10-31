@@ -14,12 +14,6 @@ export const Banner = () => {
     const [text, setText] = useState('')
     const [typingDelta, setTypingDelta] = useState(0)
 
-    useEffect(
-        () => {
-            simulateTyping()
-        }, [text]
-    )
-
     const simulateTyping = () => {
         let fullText = toRotate[wordIndex]
         let updateText = ''
@@ -52,6 +46,15 @@ export const Banner = () => {
         }
     }
 
+
+    useEffect(
+        () => {
+            simulateTyping()
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+        }, [text]
+    )
+
+
     return (
         <section className="banner" id="home">
             <Container>
@@ -68,10 +71,12 @@ export const Banner = () => {
                                         <span className='wrap'>{text}</span>
                                     </h1>
                                     <p>
-                                        Introduction about me
+                                        I'm a CS student who is interested in physics.<br/>
+                                        I'm a physics student who LOVEs to Coding.
+
                                     </p>
                                     <button>
-                                        Let's connect!
+                                        Get My Resume!
                                         <ArrowRightCircle/>
                                     </button>
                                 </div>
@@ -81,8 +86,14 @@ export const Banner = () => {
                     </Col>
 
                     <Col xs={12} md={5} xl={5}>
+                        <TrackVisibility>
+                            {({isVisible}) =>
+                                <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
+                                    <img src={headerImg} alt="Header"/>
+                                </div>
+                            }
+                        </TrackVisibility>
 
-                        <img src={headerImg} alt="Header"/>
                     </Col>
                 </Row>
             </Container>

@@ -14,10 +14,10 @@ export const Footer = () => {
                     </Col>
                     <Col sm={6} className="text-center text-sm-center">
                         <div className="social-icon">
-                            <a href="https://www.linkedin.com/in/xinzhou-li-34040522b/" target="_blank">
+                            <a href="https://www.linkedin.com/in/xinzhou-li-34040522b/" target="_blank" rel="noopener noreferrer">
                                 <img src={linkedin_logo} alt="linkedinlogo"/>
                             </a>
-                            <a href="https://github.com/XinzhouLi" target="_blank">
+                            <a href="https://github.com/XinzhouLi" target="_blank" rel="noopener noreferrer">
                                 <img src={githubLogo} alt="githublogo"/>
                             </a>
                             <p>CopyRight 2023. All Right Reserved.</p>

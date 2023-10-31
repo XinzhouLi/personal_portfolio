@@ -52,10 +52,10 @@ export const NavBar =  () =>{
                             Home
                         </Nav.Link>
 
-                        <Nav.Link href="#skills"
-                                  className={activeLink === 'skill' ? 'active navbar-link':'navbar-link'}
-                                  onClick={()=> onUpdateActiveLink('skill')}>
-                            Skills
+                        <Nav.Link href="#experience"
+                                  className={activeLink === 'experience' ? 'active navbar-link':'navbar-link'}
+                                  onClick={()=> onUpdateActiveLink('experience')}>
+                            Experience
                         </Nav.Link>
 
                         <Nav.Link href="#projects"
@@ -67,10 +67,10 @@ export const NavBar =  () =>{
 
                     <span className="navbar-text">
                         <div className="social-icon">
-                            <a href="https://www.linkedin.com/in/xinzhou-li-34040522b/" target="_blank">
+                            <a href="https://www.linkedin.com/in/xinzhou-li-34040522b/" target="_blank" rel="noopener noreferrer">
                                <img src={linkedin_logo} alt="linkedinlogo"/>
                             </a>
-                            <a href="https://github.com/XinzhouLi" target="_blank">
+                            <a href="https://github.com/XinzhouLi" target="_blank" rel="noopener noreferrer">
                                <img src={githubLogo} alt="githublogo"/>
                             </a>
                             <button className="connect" onClick={()=>{window.location.href='#connect'}}>
